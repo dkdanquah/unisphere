@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -19,13 +20,17 @@ export default function Home() {
               energy and essence of university life right to your fingertips
             </p>
             <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
-              <Button variant="blue" className="w-full">
-                Explore events
-              </Button>
+              <Link href={"/events"} passHref className="w-full">
+                <Button variant="blue" className="w-full">
+                  Explore events
+                </Button>
+              </Link>
               <div className="my-2 sm:mx-2"></div>
-              <Button variant="secondary" className="w-full">
-                Read articles
-              </Button>
+              <Link href={"/articles"} passHref className="w-full">
+                <Button variant="secondary" className="w-full">
+                  Read articles
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

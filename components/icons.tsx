@@ -2,6 +2,7 @@ import {
   AlertTriangle,
   ArrowRight,
   Banknote,
+  Calendar,
   Check,
   CheckCircle,
   ChevronLeft,
@@ -109,6 +110,7 @@ export const Icons = {
   share: Share2,
   logout: LogOut,
   unlock: Unlock,
+  calendar: Calendar,
   system: (props: LucideProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
       <path

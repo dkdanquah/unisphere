@@ -3,8 +3,10 @@
 import { useState, useEffect } from "react";
 
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Logo from "./logo";
+
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
 
@@ -38,16 +40,20 @@ export default function Header() {
 
           <nav className="">
             <ul className="flex grow flex-wrap items-center justify-end">
-              <li className="">
+              <li className="hidden">
                 <Link href={"/signin"} passHref>
                   <Button variant="link">Sign in</Button>
                 </Link>
               </li>
-              <li className="hidden md:flex md:grow">
+              {/* <li className="hidden md:flex md:grow">
                 <Link href={"/signup"} passHref>
                   <Button>Sign up</Button>
                 </Link>
-              </li>
+              </li> */}
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
             </ul>
           </nav>
         </div>
