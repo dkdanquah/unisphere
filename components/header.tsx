@@ -39,10 +39,14 @@ export default function Header() {
           <nav className="">
             <ul className="flex grow flex-wrap items-center justify-end">
               <li className="">
-                <Button variant="link">Sign in</Button>
+                <Link href={"/signin"} passHref>
+                  <Button variant="link">Sign in</Button>
+                </Link>
               </li>
               <li className="hidden md:flex md:grow">
-                <Button>Sign up</Button>
+                <Link href={"/signup"} passHref>
+                  <Button>Sign up</Button>
+                </Link>
               </li>
             </ul>
           </nav>
