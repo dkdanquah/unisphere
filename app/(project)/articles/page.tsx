@@ -1,7 +1,7 @@
 import Listview from "@/components/listview";
 import Card from "@/components/card";
 import { Badge } from "@/components/ui/badge";
-import { Icons } from "@/components/icons";
+import { SearchField } from "@/components/search";
 
 export default function Home() {
   return (
@@ -13,11 +13,15 @@ export default function Home() {
           </h1>
           <Badge className="ml-2 mt-1">22 articles</Badge>
         </div>
+
         <div className="mt-1 max-w-2xl">
           <p className="mb-8 text-lg text-muted-foreground">
             Dive into a world of knowledge, inspiration, and intellectual growth
             through our captivating collection of articles.
           </p>
+          <div className="my-4">
+            <SearchField />
+          </div>
         </div>
       </div>
       <Listview>

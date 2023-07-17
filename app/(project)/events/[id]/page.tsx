@@ -44,19 +44,19 @@ export default function Home() {
       {/* text content */}
       <div className="mx-auto mt-1 text-lg leading-10 text-muted-foreground sm:px-4">
         <p className="my-5">
-          In today's digital age, coding has emerged as a remarkable fusion of
-          art and technology. Beyond the lines of code lies a realm of creative
-          expression, problem-solving, and innovation. The art of coding is not
-          merely about writing instructions for computers; it is a canvas where
-          ideas come to life, enabling us to shape the future and build
-          transformative solutions. Let's delve into the fascinating world of
-          coding and explore its inherent artistic nature. Coding is akin to an
-          artist's palette, offering endless possibilities for creativity. Just
-          like a painter selects colors and strokes to create a masterpiece, a
-          coder chooses programming languages, algorithms, and data structures
-          to build elegant and efficient solutions. The ability to think
-          critically, imagine abstract concepts, and transform them into
-          functioning programs is the essence of coding as an art form.
+          In today&apos;s digital age, coding has emerged as a remarkable fusion
+          of art and technology. Beyond the lines of code lies a realm of
+          creative expression, problem-solving, and innovation. The art of
+          coding is not merely about writing instructions for computers; it is a
+          canvas where ideas come to life, enabling us to shape the future and
+          build transformative solutions. Let&apos;s delve into the fascinating
+          world of coding and explore its inherent artistic nature. Coding is
+          akin to an artist&apos;s palette, offering endless possibilities for
+          creativity. Just like a painter selects colors and strokes to create a
+          masterpiece, a coder chooses programming languages, algorithms, and
+          data structures to build elegant and efficient solutions. The ability
+          to think critically, imagine abstract concepts, and transform them
+          into functioning programs is the essence of coding as an art form.
         </p>
         <p className="my-5">
           Similar to composing a symphony, coding demands a harmonious balance
@@ -80,15 +80,15 @@ export default function Home() {
           challenges that require out-of-the-box thinking and resourcefulness.
           They explore different approaches, experiment with ideas, and persist
           until they uncover the most effective solution, much like an artist
-          refining their work until it's just right. Embracing Collaboration and
-          Community: The art of coding thrives in a vibrant and collaborative
-          community. Programmers share knowledge, exchange ideas, and contribute
-          to open-source projects, collectively pushing the boundaries of what
-          is possible. Collaboration breeds innovation, as diverse perspectives
-          and skill sets merge to create something greater than the sum of its
-          parts. In this dynamic ecosystem, coding transcends individual
-          expression and becomes a collective effort to advance technology and
-          improve the world around us.
+          refining their work until it&apos;s just right. Embracing
+          Collaboration and Community: The art of coding thrives in a vibrant
+          and collaborative community. Programmers share knowledge, exchange
+          ideas, and contribute to open-source projects, collectively pushing
+          the boundaries of what is possible. Collaboration breeds innovation,
+          as diverse perspectives and skill sets merge to create something
+          greater than the sum of its parts. In this dynamic ecosystem, coding
+          transcends individual expression and becomes a collective effort to
+          advance technology and improve the world around us.
         </p>
       </div>
     </section>

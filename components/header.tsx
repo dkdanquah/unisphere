@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Logo from "./logo";
+import { Icons } from "./icons";
 
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
@@ -45,11 +46,27 @@ export default function Header() {
                   <Button variant="link">Sign in</Button>
                 </Link>
               </li>
-              {/* <li className="hidden md:flex md:grow">
+              {/* <li className="mr-2 hidden md:flex md:grow">
                 <Link href={"/signup"} passHref>
                   <Button>Sign up</Button>
                 </Link>
               </li> */}
+              <li className="mr-2 hidden md:flex md:grow">
+                <Link href={"/signup"} passHref>
+                  <Button>
+                    <Icons.add className="mr-1 h-5 w-5" />
+                    Write article
+                  </Button>
+                </Link>
+              </li>
+              <li className="mr-2 hidden md:flex md:grow">
+                <Link href={"/signup"} passHref>
+                  <Button>
+                    <Icons.add className="mr-1 h-5 w-5" />
+                    Create event
+                  </Button>
+                </Link>
+              </li>
               <li>
                 <Link href={"/profile"} passHref>
                   <Avatar className="ring ring-zinc-300">

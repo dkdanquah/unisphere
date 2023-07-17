@@ -1,7 +1,7 @@
 import Listview from "@/components/listview";
 import Card from "@/components/card";
 import { Badge } from "@/components/ui/badge";
-import { Icons } from "@/components/icons";
+import { SearchField } from "@/components/search";
 
 export default function Home() {
   return (
@@ -19,6 +19,9 @@ export default function Home() {
             events. Discover, engage, and participate in a wide range of
             activities.
           </p>
+          <div className="my-4">
+            <SearchField />
+          </div>
         </div>
       </div>
       <Listview>
