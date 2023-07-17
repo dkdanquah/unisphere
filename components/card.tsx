@@ -41,7 +41,7 @@ export default function Card() {
           <span className="pl-2 text-xs">Jason Adarkwah</span>
         </div>
       </div>
-      <Link href={"/articles/the-art-of-programming"}>
+      <Link href={"/events/src-2023"}>
         <Button className="mt-3 w-full">Read</Button>
       </Link>
     </div>

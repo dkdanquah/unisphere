@@ -9,14 +9,15 @@ export default function Home() {
       <div className="py-6">
         <div className="flex items-center">
           <h1 className="leading-tighter text-3xl font-extrabold tracking-tighter text-zinc-700 md:text-4xl">
-            Read articles
+            Explore events
           </h1>
-          <Badge className="ml-2 mt-1">22 articles</Badge>
+          <Badge className="ml-2 mt-1">13 events</Badge>
         </div>
         <div className="mt-1 max-w-2xl">
           <p className="mb-8 text-lg text-muted-foreground">
-            Dive into a world of knowledge, inspiration, and intellectual growth
-            through our captivating collection of articles.
+            Experience the pulse of campus life through our exciting and diverse
+            events. Discover, engage, and participate in a wide range of
+            activities.
           </p>
         </div>
       </div>

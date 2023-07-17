@@ -12,7 +12,7 @@ export default function Home() {
       <div className="mx-auto py-6">
         <div className="flex items-center justify-start">
           <h1 className="leading-tighter mx-auto text-center text-4xl font-extrabold tracking-tighter text-zinc-700 md:text-6xl">
-            The Art Of Programming
+            SRC Week 2023: The vibrance of music potrayed
           </h1>
         </div>
         <div className="mx-auto mt-1 max-w-2xl">
