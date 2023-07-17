@@ -50,10 +50,14 @@ export default function Header() {
                   <Button>Sign up</Button>
                 </Link>
               </li> */}
-              <Avatar className="ring ring-zinc-300">
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
+              <li>
+                <Link href={"/profile"} passHref>
+                  <Avatar className="ring ring-zinc-300">
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
