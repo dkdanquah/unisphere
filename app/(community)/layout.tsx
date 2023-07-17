@@ -14,7 +14,9 @@ export default function RootLayout({
   return (
     <main>
       <Header />
-      <section className="mx-auto max-w-7xl px-7">{children}</section>
+      <section className="mx-auto max-w-7xl px-4 py-24 md:px-7">
+        {children}
+      </section>
     </main>
   );
 }

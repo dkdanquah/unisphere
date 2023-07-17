@@ -27,7 +27,7 @@ export default function Header() {
         !top ? "bg-white shadow-lg backdrop-blur-sm" : ""
       }`}
     >
-      <div className="mx-auto max-w-7xl px-5 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 md:px-7">
         <div className="flex h-16 items-center justify-between md:h-20">
           <div className="mr-4 shrink-0">
             <Link href={"/"}>
@@ -50,7 +50,7 @@ export default function Header() {
                   <Button>Sign up</Button>
                 </Link>
               </li> */}
-              <Avatar>
+              <Avatar className="ring ring-zinc-300">
                 <AvatarImage src="https://github.com/shadcn.png" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>

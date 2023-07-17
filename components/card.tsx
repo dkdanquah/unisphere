@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import demo1 from "@/public/images/demo1.jpg";
 import demo2 from "@/public/images/demo2.jpg";
 import { Icons } from "./icons";
+import Link from "next/link";
 
 export default function Card() {
   return (
@@ -40,7 +41,9 @@ export default function Card() {
           <span className="pl-2 text-xs">Jason Adarkwah</span>
         </div>
       </div>
-      <Button className="mt-3 w-full">Read</Button>
+      <Link href={"/articles/the-art-of-programming"}>
+        <Button className="mt-3 w-full">Read</Button>
+      </Link>
     </div>
   );
 }
