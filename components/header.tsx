@@ -52,7 +52,7 @@ export default function Header() {
                 </Link>
               </li> */}
               <li className="mr-2 hidden md:flex md:grow">
-                <Link href={"/signup"} passHref>
+                <Link href={"/new-article"} passHref>
                   <Button>
                     <Icons.add className="mr-1 h-5 w-5" />
                     Write article
@@ -60,7 +60,7 @@ export default function Header() {
                 </Link>
               </li>
               <li className="mr-2 hidden md:flex md:grow">
-                <Link href={"/signup"} passHref>
+                <Link href={"/new-event"} passHref>
                   <Button>
                     <Icons.add className="mr-1 h-5 w-5" />
                     Create event

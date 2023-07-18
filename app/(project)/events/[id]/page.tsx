@@ -1,14 +1,11 @@
 import Image from "next/image";
-import Listview from "@/components/listview";
-import Card from "@/components/card";
 
 import demo3 from "@/public/images/demo3.jpg";
-import demo4 from "@/public/images/demo4.jpg";
 import { Icons } from "@/components/icons";
 
 export default function Home() {
   return (
-    <section className="flex flex-col justify-between py-24 md:p-2">
+    <section className="flex flex-col justify-between py-12 md:p-2 md:py-24">
       <div className="mx-auto py-6">
         <div className="flex items-center justify-start">
           <h1 className="leading-tighter mx-auto text-center text-4xl font-extrabold tracking-tighter text-zinc-700 md:text-6xl">
