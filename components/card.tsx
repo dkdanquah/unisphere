@@ -15,7 +15,7 @@ export default function Card() {
         width={400}
         className="h-56 w-full rounded object-cover"
       />
-      <h4 className="pt-3 text-lg font-bold text-zinc-700">
+      <h4 className="pt-3 text-lg font-bold text-zinc-700 dark:text-zinc-100">
         The Art Of Programming
       </h4>
       <p className="py-3 text-muted-foreground">

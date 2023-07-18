@@ -11,8 +11,7 @@ export default function Logo() {
       y="0px"
       viewBox="0 0 229 229"
       xmlSpace="preserve"
-      fill="black"
-      className="inline-block h-10"
+      className="inline-block h-10 fill-black dark:fill-white"
     >
       <g transform="matrix( 1, 0, 0, 1, 128,27) ">
         <g>

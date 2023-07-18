@@ -8,7 +8,7 @@ export default function Home() {
       <Header />
       <section className="flex min-h-screen flex-col justify-between p-2 pt-24">
         <div className="mx-auto max-w-6xl py-12 text-center sm:pt-44">
-          <h1 className="leading-tighter mb-4 text-5xl font-extrabold tracking-tighter text-zinc-700 md:text-8xl">
+          <h1 className="leading-tighter mb-4 text-5xl font-extrabold tracking-tighter text-zinc-700 dark:text-zinc-100 md:text-8xl">
             Explore campus at your{" "}
             <span className="inline-block h-28 bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text pr-2 text-transparent">
               fingertips

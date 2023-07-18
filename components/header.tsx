@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Logo from "./logo";
 import { Icons } from "./icons";
+import ThemeToggle from "./theme-toggle";
 
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
@@ -25,7 +26,7 @@ export default function Header() {
   return (
     <header
       className={`fixed z-30 w-full transition duration-300 ease-in-out md:bg-opacity-90 ${
-        !top ? "bg-white shadow-lg backdrop-blur-sm" : ""
+        !top ? "bg-white shadow-lg backdrop-blur-sm dark:bg-zinc-900" : ""
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 md:px-7">
@@ -74,6 +75,9 @@ export default function Header() {
                     <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
                 </Link>
+              </li>
+              <li className="ml-2">
+                <ThemeToggle />
               </li>
             </ul>
           </nav>

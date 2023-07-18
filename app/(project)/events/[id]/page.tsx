@@ -8,7 +8,7 @@ export default function Home() {
     <section className="flex flex-col justify-between py-12 md:p-2 md:py-24">
       <div className="mx-auto py-6">
         <div className="flex items-center justify-start">
-          <h1 className="leading-tighter mx-auto text-center text-4xl font-extrabold tracking-tighter text-zinc-700 md:text-6xl">
+          <h1 className="leading-tighter mx-auto text-center text-4xl font-extrabold tracking-tighter text-zinc-700 dark:text-zinc-100 md:text-6xl">
             SRC Week 2023: The vibrance of music potrayed
           </h1>
         </div>

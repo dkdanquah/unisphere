@@ -19,14 +19,6 @@ import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { format } from "date-fns";
-import { CalendarIcon, Calendar } from "lucide-react";
 import { CalendarDateRangePicker } from "@/components/range-picker";
 
 const FormSchema = z.object({
@@ -76,7 +68,7 @@ export default function Page() {
     <section className="flex flex-col justify-between p-2">
       <div className="py-6">
         <div className="flex items-center">
-          <h1 className="leading-tighter text-3xl font-extrabold tracking-tighter text-zinc-700 md:text-4xl">
+          <h1 className="leading-tighter text-3xl font-extrabold tracking-tighter text-zinc-700 dark:text-zinc-100 md:text-4xl">
             Create a new event
           </h1>
         </div>
