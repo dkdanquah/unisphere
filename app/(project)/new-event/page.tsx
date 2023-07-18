@@ -16,11 +16,18 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/components/ui/use-toast";
-import Editor from "@/components/editor";
 import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+import { format } from "date-fns";
+import { CalendarIcon, Calendar } from "lucide-react";
+import { CalendarDateRangePicker } from "@/components/range-picker";
 
 const FormSchema = z.object({
   title: z.string().min(7, {
@@ -31,6 +38,9 @@ const FormSchema = z.object({
   }),
   tags: z.string().min(7, {
     message: "Tags must be at least 3 characters.",
+  }),
+  date: z.date({
+    required_error: "You must specify dates for the event.",
   }),
   file: z.string().min(3, {
     message: "You must upload a cover image",
@@ -67,7 +77,7 @@ export default function Page() {
       <div className="py-6">
         <div className="flex items-center">
           <h1 className="leading-tighter text-3xl font-extrabold tracking-tighter text-zinc-700 md:text-4xl">
-            Write a new article
+            Create a new event
           </h1>
         </div>
         <div className="mt-1 max-w-7xl">
@@ -88,7 +98,7 @@ export default function Page() {
                         <Input placeholder="My awesome title..." {...field} />
                       </FormControl>
                       <FormDescription>
-                        This is the title of your article
+                        This is the title of your event
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -107,7 +117,7 @@ export default function Page() {
                         />
                       </FormControl>
                       <FormDescription>
-                        This is the description of your article
+                        This is the description of your event
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -129,6 +139,22 @@ export default function Page() {
                     </FormItem>
                   )}
                 />
+
+                <FormField
+                  control={form.control}
+                  name="date"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Date</FormLabel>
+                      <FormControl>
+                        <CalendarDateRangePicker />
+                      </FormControl>
+                      <FormDescription>Event dates</FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
                 <FormField
                   control={form.control}
                   name="file"
@@ -144,7 +170,7 @@ export default function Page() {
                         />
                       </FormControl>
                       <FormDescription>
-                        This is the cover image of your article
+                        This is the cover image of your event
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -167,7 +193,7 @@ export default function Page() {
                       <FormLabel>Content</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="My very fun article"
+                          placeholder="My very fun event"
                           className="min-h-[30vh] w-full resize-none"
                           {...field}
                         />
@@ -178,7 +204,7 @@ export default function Page() {
                 />
                 {/* <Editor /> */}
                 <Button type="submit" className="w-full">
-                  Create new article
+                  Create new event
                 </Button>
               </form>
             </Form>
