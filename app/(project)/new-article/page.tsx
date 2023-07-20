@@ -16,11 +16,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/components/ui/use-toast";
-import Editor from "@/components/editor";
-import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
+import { MDX } from "@/components/markdown/mdx";
 
 const FormSchema = z.object({
   title: z.string().min(7, {
@@ -32,12 +30,12 @@ const FormSchema = z.object({
   tags: z.string().min(7, {
     message: "Tags must be at least 3 characters.",
   }),
-  file: z.string().min(3, {
-    message: "You must upload a cover image",
-  }),
-  content: z.string().min(10, {
-    message: "Content must be at least 10 characters.",
-  }),
+  // file: z.string().min(3, {
+  //   message: "You must upload a cover image",
+  // }),
+  // content: z.string().min(10, {
+  //   message: "Content must be at least 10 characters.",
+  // }),
 });
 
 export default function Page() {
@@ -129,7 +127,7 @@ export default function Page() {
                     </FormItem>
                   )}
                 />
-                <FormField
+                {/* <FormField
                   control={form.control}
                   name="file"
                   render={({ field }) => (
@@ -149,7 +147,21 @@ export default function Page() {
                       <FormMessage />
                     </FormItem>
                   )}
-                />
+                /> */}
+
+                <div className="">
+                  <FormLabel>Cover Image</FormLabel>
+                  <Input
+                    id="picture"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                    className="mt-2"
+                  />
+                  <FormDescription className="mt-2">
+                    This is the cover image of your article
+                  </FormDescription>
+                </div>
 
                 <Image
                   src={file ?? (file as string)}
@@ -159,25 +171,14 @@ export default function Page() {
                   height={500}
                 />
 
-                <FormField
-                  control={form.control}
-                  name="content"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Content</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="My very fun article"
-                          className="min-h-[30vh] w-full resize-none"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                <div className="">
+                  <FormLabel>Content</FormLabel>
+                  <div className="mt-2">
+                    <MDX />
+                  </div>
+                </div>
                 {/* <Editor /> */}
-                <Button type="submit" className="w-full">
+                <Button type="submit" variant="secondary" className="w-full">
                   Create new article
                 </Button>
               </form>

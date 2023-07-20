@@ -35,13 +35,25 @@ export default function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 md:px-7">
         <div className="flex h-16 items-center justify-between md:h-20">
-          <div className="mr-4 shrink-0">
+          <div className="mr-4 flex shrink-0 items-center">
             <Link href={"/"}>
               <h1 className="flex items-center font-medium">
                 <Logo />
                 <span className="ml-2 hidden md:block">Unisphere</span>
               </h1>
             </Link>
+            <ul className="ml-1 flex items-center md:ml-3">
+              <li>
+                <Link href={"/articles"} passHref>
+                  <Button variant="link">Articles</Button>
+                </Link>
+              </li>
+              <li>
+                <Link href={"/events"} passHref>
+                  <Button variant="link">Events</Button>
+                </Link>
+              </li>
+            </ul>
           </div>
 
           <nav className="">
@@ -59,7 +71,7 @@ export default function Header() {
                 <>
                   <li className="mr-2 hidden md:flex md:grow">
                     <Link href={"/new-article"} passHref>
-                      <Button>
+                      <Button variant="outline">
                         <Icons.add className="mr-1 h-5 w-5" />
                         Write article
                       </Button>
@@ -67,7 +79,7 @@ export default function Header() {
                   </li>
                   <li className="mr-2 hidden md:flex md:grow">
                     <Link href={"/new-event"} passHref>
-                      <Button>
+                      <Button variant="outline">
                         <Icons.add className="mr-1 h-5 w-5" />
                         Create event
                       </Button>
@@ -75,7 +87,7 @@ export default function Header() {
                   </li>
                   <li>
                     <Link href={"/profile"} passHref>
-                      <Avatar className="ring ring-zinc-300">
+                      <Avatar className="h-8 w-8 ring ring-zinc-300">
                         <AvatarImage src={session.user.image as string} />
                         <AvatarFallback>
                           {session.user.name?.slice(0, 2).toUpperCase()}
@@ -86,7 +98,7 @@ export default function Header() {
                 </>
               )}
 
-              <li className="ml-2">
+              <li className="ml-4">
                 <ThemeToggle />
               </li>
             </ul>

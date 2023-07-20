@@ -2,6 +2,7 @@ import {
   AlertTriangle,
   ArrowRight,
   Banknote,
+  Bookmark,
   Calendar,
   Check,
   CheckCircle,
@@ -38,6 +39,8 @@ import {
   Share2,
   SunMedium,
   Terminal,
+  ThumbsDown,
+  ThumbsUp,
   Trash,
   Twitter,
   Unlock,
@@ -111,6 +114,9 @@ export const Icons = {
   logout: LogOut,
   unlock: Unlock,
   calendar: Calendar,
+  thumbsUp: ThumbsUp,
+  thumbsDown: ThumbsDown,
+  bookmark: Bookmark,
   system: (props: LucideProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
       <path

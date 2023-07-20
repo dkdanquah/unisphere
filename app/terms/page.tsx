@@ -1,7 +1,3 @@
-import Image from "next/image";
-
-import demo3 from "@/public/images/demo3.jpg";
-import { Icons } from "@/components/icons";
 import Header from "@/components/header";
 
 export default function Home() {
@@ -25,9 +21,9 @@ export default function Home() {
         {/* text content */}
         <div className="mx-auto mt-1 text-lg leading-10 text-muted-foreground sm:px-4">
           <p className="my-5">
-            Welcome to Unisphere. These Terms and Conditions ("Terms") govern
-            your use of our website, mobile applications, products, and services
-            (collectively referred to as the "Services"). By accessing or using
+            Welcome to Unisphere. These Terms and Conditions govern your use of
+            our website, mobile applications, products, and services
+            (collectively referred to as the Services). By accessing or using
             our Services, you agree to be bound by these Terms. If you do not
             agree with these Terms, please do not use our Services.
           </p>

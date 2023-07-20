@@ -1,7 +1,3 @@
-import Image from "next/image";
-
-import demo3 from "@/public/images/demo3.jpg";
-import { Icons } from "@/components/icons";
 import Header from "@/components/header";
 
 export default function Home() {

@@ -1,7 +1,8 @@
 import Image from "next/image";
 
-import demo3 from "@/public/images/demo3.jpg";
+import demo1 from "@/public/images/demo1.jpg";
 import { Icons } from "@/components/icons";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
@@ -9,14 +10,34 @@ export default function Home() {
       <div className="mx-auto py-6">
         <div className="flex items-center justify-start">
           <h1 className="leading-tighter mx-auto text-center text-4xl font-extrabold tracking-tighter text-zinc-700 dark:text-zinc-100 md:text-6xl">
-            The Art Of Programming
+            SRC Week 2023: The vibrance of music potrayed
           </h1>
         </div>
         <div className="mx-auto mt-1 max-w-2xl">
-          <p className="my-5 text-lg text-muted-foreground md:text-center">
-            Dive into a world of knowledge, inspiration, and intellectual growth
-            through our captivating collection of articles.
+          <p className="my-5 mb-2 text-lg text-muted-foreground md:text-center">
+            This post is a demo post showcasing how this app would work in real
+            life. The post was generated using AI.
           </p>
+        </div>
+        <div className="mb-4 max-w-sm md:mx-auto">
+          <Badge className="mr-1 cursor-pointer" variant="secondary">
+            SRC
+          </Badge>
+          <Badge className="mr-1 cursor-pointer" variant="secondary">
+            2023
+          </Badge>
+          <Badge className="mr-1 cursor-pointer" variant="secondary">
+            Hall
+          </Badge>
+          <Badge className="mr-1 cursor-pointer" variant="secondary">
+            Awards
+          </Badge>
+          <Badge className="mr-1 cursor-pointer" variant="secondary">
+            Council
+          </Badge>
+          <Badge className="mr-1 cursor-pointer" variant="secondary">
+            Teachers
+          </Badge>
         </div>
         <div className="mx-auto mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-center">
           <div className="flex items-center">
@@ -29,14 +50,24 @@ export default function Home() {
             <span className="pl-2 text-muted-foreground">Jason Adarkwah</span>
           </div>
         </div>
+        <div className="mb-8 flex max-w-xs items-center justify-between md:mx-auto md:max-w-md xl:hidden">
+          <Icons.bookmark className="h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400" />
+          <Icons.thumbsUp className=" h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400" />
+          <Icons.thumbsDown className=" h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400" />
+          <Icons.share className="h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400" />
+        </div>
       </div>
-      <div className="">
+      <div className="relative">
         <Image
-          src={demo3}
+          src={demo1}
           alt="artilce showcase"
           width={9000}
           className="w-full rounded object-cover"
         />
+        <Icons.bookmark className="absolute -right-10 top-0 hidden h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400 xl:block" />
+        <Icons.thumbsUp className="absolute -right-10 top-10 hidden h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400 xl:block" />
+        <Icons.thumbsDown className="absolute -right-10 top-20 hidden h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400 xl:block" />
+        <Icons.share className="absolute -right-10 top-[116px] hidden h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400 xl:block" />
       </div>
       {/* text content */}
       <div className="mx-auto mt-1 text-lg leading-10 text-muted-foreground sm:px-4">

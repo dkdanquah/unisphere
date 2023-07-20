@@ -17,9 +17,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
-import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
 import { CalendarDateRangePicker } from "@/components/range-picker";
+import { MDX } from "@/components/markdown/mdx";
 
 const FormSchema = z.object({
   title: z.string().min(7, {
@@ -31,15 +31,15 @@ const FormSchema = z.object({
   tags: z.string().min(7, {
     message: "Tags must be at least 3 characters.",
   }),
-  date: z.date({
-    required_error: "You must specify dates for the event.",
-  }),
-  file: z.string().min(3, {
-    message: "You must upload a cover image",
-  }),
-  content: z.string().min(10, {
-    message: "Content must be at least 10 characters.",
-  }),
+  // date: z.date({
+  //   required_error: "You must specify dates for the event.",
+  // }),
+  // file: z.string().min(3, {
+  //   message: "You must upload a cover image",
+  // }),
+  // content: z.string().min(3, {
+  //   message: "Content must be at least 10 characters.",
+  // }),
 });
 
 export default function Page() {
@@ -132,7 +132,7 @@ export default function Page() {
                   )}
                 />
 
-                <FormField
+                {/* <FormField
                   control={form.control}
                   name="date"
                   render={({ field }) => (
@@ -145,9 +145,16 @@ export default function Page() {
                       <FormMessage />
                     </FormItem>
                   )}
-                />
+                /> */}
 
-                <FormField
+                <div className="">
+                  <FormLabel>Date</FormLabel>
+                  <div className="mt-2">
+                    <CalendarDateRangePicker />
+                  </div>
+                </div>
+
+                {/* <FormField
                   control={form.control}
                   name="file"
                   render={({ field }) => (
@@ -167,7 +174,21 @@ export default function Page() {
                       <FormMessage />
                     </FormItem>
                   )}
-                />
+                /> */}
+
+                <div className="">
+                  <FormLabel>Cover Image</FormLabel>
+                  <Input
+                    id="picture"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                    className="mt-2"
+                  />
+                  <FormDescription className="mt-2">
+                    This is the cover image of your article
+                  </FormDescription>
+                </div>
 
                 <Image
                   src={file ?? (file as string)}
@@ -177,25 +198,13 @@ export default function Page() {
                   height={500}
                 />
 
-                <FormField
-                  control={form.control}
-                  name="content"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Content</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="My very fun event"
-                          className="min-h-[30vh] w-full resize-none"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                {/* <Editor /> */}
-                <Button type="submit" className="w-full">
+                <div className="">
+                  <FormLabel>Content</FormLabel>
+                  <div className="mt-2">
+                    <MDX />
+                  </div>
+                </div>
+                <Button type="submit" variant="secondary" className="w-full">
                   Create new event
                 </Button>
               </form>

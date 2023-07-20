@@ -66,7 +66,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         className="-my-3"
         onClick={(e) => {
           e.preventDefault();
-          signIn("google");
+          signIn("google", { callbackUrl: "/" });
         }}
       >
         {isLoading ? (
@@ -82,7 +82,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         disabled={isLoading}
         onClick={(e) => {
           e.preventDefault();
-          signIn("github");
+          signIn("github", { callbackUrl: "/" });
         }}
       >
         {isLoading ? (
