@@ -141,14 +141,27 @@ export function Write({ textValue, setTextValue }: Props) {
         ref={textareaRef}
         autoComplete="off"
         autoCorrect="off"
-        className="h-auto resize-none"
+        className="h-auto min-h-[30vh] resize-none"
         value={textValue}
         onChange={onTextValueChange}
         rows={5}
       />
-      <p className="prose-none mt-1 text-sm text-muted-foreground">
-        Supports markdown.
-      </p>
+      <div className="mt-3 flex flex-col md:mt-1 md:flex-row md:items-center">
+        <p className="prose-none mt-1 text-sm text-muted-foreground">
+          Supports markdown.
+        </p>
+        <p className="prose-none mt-1 text-sm text-muted-foreground md:ml-3">
+          How to use{" "}
+          <a
+            href="https://blog.bit.ai/what-is-markdown/"
+            rel="noreferrer"
+            target="_blank"
+            className="font-medium underline"
+          >
+            Markdown
+          </a>
+        </p>
+      </div>
       <Command
         ref={dropdownRef}
         className={cn(
