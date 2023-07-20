@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 
+import { signIn, signOut, useSession } from "next-auth/react";
+
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
@@ -62,6 +64,10 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         type="button"
         disabled={isLoading}
         className="-my-3"
+        onClick={(e) => {
+          e.preventDefault();
+          signIn("google");
+        }}
       >
         {isLoading ? (
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
@@ -70,7 +76,15 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         )}{" "}
         Google
       </Button>
-      <Button variant="outline" type="button" disabled={isLoading}>
+      <Button
+        variant="outline"
+        type="button"
+        disabled={isLoading}
+        onClick={(e) => {
+          e.preventDefault();
+          signIn("github");
+        }}
+      >
         {isLoading ? (
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
         ) : (

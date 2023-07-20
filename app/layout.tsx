@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Toaster } from "@/components/ui/toaster";
-import { ThemeProvider } from "@/components/providers";
+import { Provider } from "@/components/providers";
 
 const inter = localFont({
   src: [
@@ -67,10 +67,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <Provider attribute="class" defaultTheme="system" enableSystem>
           <Toaster />
           {children}
-        </ThemeProvider>
+        </Provider>
       </body>
     </html>
   );

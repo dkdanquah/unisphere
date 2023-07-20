@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -23,6 +24,9 @@ export default function Header() {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
 
+  const { data: session, status } = useSession();
+  const loading = status === "loading";
+
   return (
     <header
       className={`fixed z-30 w-full transition duration-300 ease-in-out md:bg-opacity-90 ${
@@ -34,48 +38,54 @@ export default function Header() {
           <div className="mr-4 shrink-0">
             <Link href={"/"}>
               <h1 className="flex items-center font-medium">
-                <Logo />
-                <span className="hidden md:block">Unisphere</span>
+                {/* <Logo /> */}
+                <span className="ml-2 hidden md:block">Unisphere</span>
               </h1>
             </Link>
           </div>
 
           <nav className="">
             <ul className="flex grow flex-wrap items-center justify-end">
-              <li className="hidden">
-                <Link href={"/signin"} passHref>
-                  <Button variant="link">Sign in</Button>
-                </Link>
-              </li>
-              {/* <li className="mr-2 hidden md:flex md:grow">
-                <Link href={"/signup"} passHref>
-                  <Button>Sign up</Button>
-                </Link>
-              </li> */}
-              <li className="mr-2 hidden md:flex md:grow">
-                <Link href={"/new-article"} passHref>
-                  <Button>
-                    <Icons.add className="mr-1 h-5 w-5" />
-                    Write article
-                  </Button>
-                </Link>
-              </li>
-              <li className="mr-2 hidden md:flex md:grow">
-                <Link href={"/new-event"} passHref>
-                  <Button>
-                    <Icons.add className="mr-1 h-5 w-5" />
-                    Create event
-                  </Button>
-                </Link>
-              </li>
-              <li>
-                <Link href={"/profile"} passHref>
-                  <Avatar className="ring ring-zinc-300">
-                    <AvatarImage src="https://github.com/shadcn.png" />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                </Link>
-              </li>
+              {!session && (
+                <>
+                  <li className="">
+                    <Link href={"/signin"} passHref>
+                      <Button variant="ghost">Sign in</Button>
+                    </Link>
+                  </li>
+                </>
+              )}
+              {session?.user && (
+                <>
+                  <li className="mr-2 hidden md:flex md:grow">
+                    <Link href={"/new-article"} passHref>
+                      <Button>
+                        <Icons.add className="mr-1 h-5 w-5" />
+                        Write article
+                      </Button>
+                    </Link>
+                  </li>
+                  <li className="mr-2 hidden md:flex md:grow">
+                    <Link href={"/new-event"} passHref>
+                      <Button>
+                        <Icons.add className="mr-1 h-5 w-5" />
+                        Create event
+                      </Button>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={"/profile"} passHref>
+                      <Avatar className="ring ring-zinc-300">
+                        <AvatarImage src={session.user.image as string} />
+                        <AvatarFallback>
+                          {session.user.name?.slice(0, 2).toUpperCase()}
+                        </AvatarFallback>
+                      </Avatar>
+                    </Link>
+                  </li>
+                </>
+              )}
+
               <li className="ml-2">
                 <ThemeToggle />
               </li>
