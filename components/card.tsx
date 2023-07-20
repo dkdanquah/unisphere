@@ -5,27 +5,34 @@ import demo1 from "@/public/images/demo1.jpg";
 import demo2 from "@/public/images/demo2.jpg";
 import { Icons } from "./icons";
 import Link from "next/link";
+import { CardProps } from "@/lib/types";
 
-export default function Card() {
+export default function Card({
+  title,
+  description,
+  date,
+  coverImage,
+  author,
+  authorImage,
+  slug,
+}: CardProps) {
   return (
     <div className="rounded-md border p-3 shadow">
       <Image
-        src={demo1}
-        alt="artilce showcase"
+        src={coverImage}
+        alt="article showcase"
         width={400}
+        height={224}
         className="h-56 w-full rounded object-cover"
       />
       <h4 className="pt-3 text-lg font-bold text-zinc-700 dark:text-zinc-100">
-        The Art Of Programming
+        {title}
       </h4>
-      <p className="py-3 text-muted-foreground">
-        Dive into a world of knowledge, inspiration, and intellectual growth
-        through our captivating collection of articles.
-      </p>
+      <p className="min-h-[96px] py-3 text-muted-foreground">{description}</p>
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <Icons.calendar className="h-4 w-4 text-zinc-500" />{" "}
-          <span className="pl-2 text-xs">13th July 2023</span>
+          <span className="pl-2 text-xs">{new Date(date).toDateString()}</span>
         </div>
         {/* <div className="flex items-center">
           <Icons.eye className="h-4 w-4 text-zinc-500" />{" "}
@@ -33,15 +40,16 @@ export default function Card() {
         </div> */}
         <div className="flex items-center">
           <Image
-            src={demo2}
-            alt="artilce showcase"
+            src={authorImage}
+            alt="author"
             width={16}
+            height={16}
             className="h-4 w-4 rounded-full object-cover"
           />
-          <span className="pl-2 text-xs">Jason Adarkwah</span>
+          <span className="pl-2 text-xs">{author}</span>
         </div>
       </div>
-      <Link href={"/events/src-2023"}>
+      <Link href={`/${slug}`}>
         <Button className="mt-3 w-full">Read</Button>
       </Link>
     </div>

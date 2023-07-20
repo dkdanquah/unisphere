@@ -2,6 +2,8 @@ import Listview from "@/components/listview";
 import Card from "@/components/card";
 import { Badge } from "@/components/ui/badge";
 import { SearchField } from "@/components/search";
+import { articles } from "@/lib/data";
+import { CardProps } from "@/lib/types";
 
 export default function Home() {
   return (
@@ -25,11 +27,18 @@ export default function Home() {
         </div>
       </div>
       <Listview>
-        {Array(7)
-          .fill("")
-          .map((_, i) => (
-            <Card key={i} />
-          ))}
+        {articles.map((e: CardProps, i) => (
+          <Card
+            key={e.slug}
+            title={e.title}
+            description={e.description}
+            date={e.date}
+            coverImage={e.coverImage}
+            author={e.author}
+            authorImage={e.authorImage}
+            slug={e.slug}
+          />
+        ))}
       </Listview>
     </section>
   );

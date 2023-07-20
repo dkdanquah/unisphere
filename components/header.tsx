@@ -38,7 +38,7 @@ export default function Header() {
           <div className="mr-4 shrink-0">
             <Link href={"/"}>
               <h1 className="flex items-center font-medium">
-                {/* <Logo /> */}
+                <Logo />
                 <span className="ml-2 hidden md:block">Unisphere</span>
               </h1>
             </Link>
