@@ -71,7 +71,10 @@ export default function Home() {
       </div>
       {/* text content */}
       <div className="mx-auto mt-1 text-lg leading-10 text-muted-foreground sm:px-4">
-        <p className="my-5">
+        <h4 className="mt-12 text-2xl font-semibold text-zinc-700 dark:text-zinc-100">
+          Event Outline
+        </h4>
+        <p className="my-5 mt-2">
           In today&apos;s digital age, coding has emerged as a remarkable fusion
           of art and technology. Beyond the lines of code lies a realm of
           creative expression, problem-solving, and innovation. The art of

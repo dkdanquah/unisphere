@@ -1,6 +1,5 @@
 import Listview from "@/components/listview";
 import Card from "@/components/card";
-import { Badge } from "@/components/ui/badge";
 import { SearchField } from "@/components/search";
 import { articles } from "@/lib/data";
 import { CardProps } from "@/lib/types";
@@ -13,7 +12,6 @@ export default function Home() {
           <h1 className="leading-tighter text-3xl font-extrabold tracking-tighter text-zinc-700 dark:text-zinc-100 md:text-4xl">
             Read articles
           </h1>
-          <Badge className="ml-2 mt-1">{articles.length} articles</Badge>
         </div>
 
         <div className="mt-1 max-w-2xl">

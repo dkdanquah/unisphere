@@ -208,7 +208,7 @@ export default function Page() {
                 />
 
                 <div className="">
-                  <FormLabel>Event brochure</FormLabel>
+                  <FormLabel>Event Outline</FormLabel>
                   <div className="mt-2">
                     <MDX />
                   </div>
