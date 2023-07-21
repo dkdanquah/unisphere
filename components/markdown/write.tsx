@@ -16,9 +16,10 @@ import { usePathname } from "next/navigation";
 interface Props {
   textValue: string;
   setTextValue: React.Dispatch<React.SetStateAction<string>>;
+  placeholder: string;
 }
 
-export function Write({ textValue, setTextValue }: Props) {
+export function Write({ textValue, setTextValue, placeholder }: Props) {
   const pathname = usePathname();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -146,11 +147,7 @@ export function Write({ textValue, setTextValue }: Props) {
         className="h-auto min-h-[30vh] resize-none"
         value={textValue}
         onChange={onTextValueChange}
-        placeholder={
-          pathname.includes("article")
-            ? "Your awesome article for everyone"
-            : "Let people know all about your event"
-        }
+        placeholder={placeholder}
         rows={5}
       />
       <div className="mt-3 flex flex-col md:mt-1 md:flex-row md:items-center">

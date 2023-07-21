@@ -3,6 +3,7 @@ import Image from "next/image";
 import demo3 from "@/public/images/demo3.jpg";
 import { Icons } from "@/components/icons";
 import { Badge } from "@/components/ui/badge";
+import Comments from "@/components/comments";
 
 export default function Home() {
   return (
@@ -44,7 +45,7 @@ export default function Home() {
           <div className="h-1 sm:w-12"></div>
           <div className="flex items-center sm:justify-center">
             <Icons.user className="h-4 w-4 text-zinc-500" />
-            <span className="pl-2 text-muted-foreground">Jason Adarkwah</span>
+            <span className="pl-2 text-muted-foreground">Jese Leos</span>
           </div>
         </div>
         <div className="mb-8 flex max-w-xs items-center justify-between md:mx-auto md:max-w-md xl:hidden">
@@ -115,6 +116,8 @@ export default function Home() {
           transcends individual expression and becomes a collective effort to
           advance technology and improve the world around us.
         </p>
+
+        <Comments />
       </div>
     </section>
   );

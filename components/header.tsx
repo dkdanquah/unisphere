@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -24,8 +24,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
 
-  const { data: session, status } = useSession();
-  const loading = status === "loading";
+  const { data: session } = useSession();
 
   return (
     <header
@@ -63,7 +62,7 @@ export default function Header() {
               {!session && (
                 <>
                   <li className="">
-                    <Link href={"/signin"} passHref>
+                    <Link href={"/signin"} passHref className="hidden lg:block">
                       <Button variant="ghost">Sign in</Button>
                     </Link>
                   </li>

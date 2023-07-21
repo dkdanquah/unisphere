@@ -1,8 +1,12 @@
+"use client";
+
 import Header from "@/components/header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
+  const { data: session } = useSession();
   return (
     <main>
       <Header />
@@ -19,19 +23,29 @@ export default function Home() {
               Unisphere is your go-to online platform that brings the vibrant
               energy and essence of university life right to your fingertips
             </p>
-            <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
-              <Link href={"/events"} passHref className="w-full">
-                <Button variant="blue" className="w-full">
-                  Explore events
+
+            {!session && (
+              <Link href={"/signin"} passHref className="">
+                <Button variant="blue" className="mx-auto w-full max-w-xs">
+                  Sign in
                 </Button>
               </Link>
-              <div className="my-2 sm:mx-2"></div>
-              <Link href={"/articles"} passHref className="w-full">
-                <Button variant="secondary" className="w-full">
-                  Read articles
-                </Button>
-              </Link>
-            </div>
+            )}
+            {session?.user && (
+              <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
+                <Link href={"/events"} passHref className="w-full">
+                  <Button variant="blue" className="w-full">
+                    Explore events
+                  </Button>
+                </Link>
+                <div className="my-2 sm:mx-2"></div>
+                <Link href={"/articles"} passHref className="w-full">
+                  <Button variant="secondary" className="w-full">
+                    Read articles
+                  </Button>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
         <div className="scribble h-72 md:h-36"></div>

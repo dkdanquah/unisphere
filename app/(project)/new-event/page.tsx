@@ -210,7 +210,7 @@ export default function Page() {
                 <div className="">
                   <FormLabel>Event Outline</FormLabel>
                   <div className="mt-2">
-                    <MDX />
+                    <MDX placeholder="Let people know all about your event" />
                   </div>
                 </div>
                 <Button type="submit" variant="secondary" className="w-full">

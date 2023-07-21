@@ -183,7 +183,7 @@ export default function Page() {
                 <div className="">
                   <FormLabel>Content</FormLabel>
                   <div className="mt-2">
-                    <MDX />
+                    <MDX placeholder="Your awesome article for everyone" />
                   </div>
                 </div>
                 {/* <Editor /> */}

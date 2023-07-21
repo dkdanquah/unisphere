@@ -10,7 +10,7 @@ import { Preview } from "./preview";
 
 const defaultText = ``;
 
-export function MDX() {
+export function MDX({ placeholder }: { placeholder: string }) {
   const [textValue, setTextValue] = React.useState(defaultText);
 
   return (
@@ -20,7 +20,7 @@ export function MDX() {
         <TabsTrigger value="preview">Preview</TabsTrigger>
       </TabsList>
       <TabsContent value="write">
-        <Write {...{ textValue, setTextValue }} />
+        <Write {...{ textValue, setTextValue, placeholder }} />
       </TabsContent>
       <TabsContent value="preview">
         <Preview {...{ textValue }} />
