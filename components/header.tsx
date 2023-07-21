@@ -39,7 +39,9 @@ export default function Header() {
             <Link href={"/"}>
               <h1 className="flex items-center font-medium">
                 <Logo />
-                <span className="ml-2 hidden md:block">Unisphere</span>
+                <span className="ml-2 hidden font-medium md:block">
+                  UniSphere
+                </span>
               </h1>
             </Link>
             <ul className="ml-1 flex items-center md:ml-3">

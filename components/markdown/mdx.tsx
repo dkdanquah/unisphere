@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
+
+import { usePathname } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Write } from "./write";
 import { Preview } from "./preview";
 // TODO: TabsList has an interesting tab focus. Need to investigate on it
 
-const defaultText = `Build by @mxkaske, _powered by_ @shadcn **ui**.\n\nSupports raw <code>html</code>.`;
+const defaultText = ``;
 
 export function MDX() {
   const [textValue, setTextValue] = React.useState(defaultText);

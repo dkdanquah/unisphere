@@ -1,8 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 
-import demo1 from "@/public/images/demo1.jpg";
-import demo2 from "@/public/images/demo2.jpg";
 import { Icons } from "./icons";
 import Link from "next/link";
 import { CardProps } from "@/lib/types";
@@ -16,6 +17,7 @@ export default function Card({
   authorImage,
   slug,
 }: CardProps) {
+  const pathname = usePathname();
   return (
     <div className="rounded-md border p-3 shadow">
       <Image
@@ -50,7 +52,9 @@ export default function Card({
         </div>
       </div>
       <Link href={`/${slug}`}>
-        <Button className="mt-3 w-full">Read</Button>
+        <Button className="mt-3 w-full">
+          {pathname.includes("articles") ? "Read" : "View"}
+        </Button>
       </Link>
     </div>
   );

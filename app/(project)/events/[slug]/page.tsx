@@ -15,8 +15,8 @@ export default function Home() {
         </div>
         <div className="mx-auto mt-1 max-w-2xl">
           <p className="my-5 mb-2 text-lg text-muted-foreground md:text-center">
-            This post is a demo post showcasing how this app would work in real
-            life. The post was generated using AI.
+            This post is a demo event showcasing how this app would work in real
+            life and how an event would be seen by a user.
           </p>
         </div>
         <div className="mb-4 max-w-sm md:mx-auto">
@@ -51,10 +51,10 @@ export default function Home() {
           </div>
         </div>
         <div className="mb-8 flex max-w-xs items-center justify-between md:mx-auto md:max-w-md xl:hidden">
-          <Icons.bookmark className="h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400" />
-          <Icons.thumbsUp className=" h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400" />
-          <Icons.thumbsDown className=" h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400" />
-          <Icons.share className="h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400" />
+          <Icons.bookmark className="h-5 w-5 cursor-pointer text-zinc-400  transition-all duration-100 ease-in-out hover:scale-125 hover:fill-zinc-600 hover:text-zinc-600 dark:text-zinc-600 dark:hover:fill-zinc-400 dark:hover:text-zinc-400" />
+          <Icons.thumbsUp className=" h-5 w-5 cursor-pointer text-zinc-400  transition-all duration-100 ease-in-out hover:scale-125 hover:fill-zinc-600 hover:text-zinc-600 dark:text-zinc-600 dark:hover:fill-zinc-400 dark:hover:text-zinc-400" />
+          <Icons.thumbsDown className=" h-5 w-5 cursor-pointer text-zinc-400  transition-all duration-100 ease-in-out hover:scale-125 hover:fill-zinc-600 hover:text-zinc-600 dark:text-zinc-600 dark:hover:fill-zinc-400 dark:hover:text-zinc-400" />
+          <Icons.share className="h-5 w-5 cursor-pointer text-zinc-400  transition-all duration-100 ease-in-out hover:scale-125 hover:fill-zinc-600 hover:text-zinc-600 dark:text-zinc-600 dark:hover:fill-zinc-400 dark:hover:text-zinc-400" />
         </div>
       </div>
       <div className="relative">
@@ -64,10 +64,10 @@ export default function Home() {
           width={9000}
           className="w-full rounded object-cover"
         />
-        <Icons.bookmark className="absolute -right-10 top-0 hidden h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400 xl:block" />
-        <Icons.thumbsUp className="absolute -right-10 top-10 hidden h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400 xl:block" />
-        <Icons.thumbsDown className="absolute -right-10 top-20 hidden h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400 xl:block" />
-        <Icons.share className="absolute -right-10 top-[116px] hidden h-5 w-5 cursor-pointer text-zinc-400 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-400 xl:block" />
+        <Icons.bookmark className="absolute -right-10 top-0 hidden h-5 w-5 cursor-pointer text-zinc-400 transition-all duration-100 ease-in-out hover:scale-125 hover:fill-zinc-600 hover:text-zinc-600 dark:text-zinc-600 dark:hover:fill-zinc-400 dark:hover:text-zinc-400 xl:block" />
+        <Icons.thumbsUp className="absolute -right-10  top-10 hidden h-5 w-5 cursor-pointer text-zinc-400 transition-all duration-100 ease-in-out hover:scale-125 hover:fill-zinc-600 hover:text-zinc-600 dark:text-zinc-600 dark:hover:fill-zinc-400 dark:hover:text-zinc-400 xl:block" />
+        <Icons.thumbsDown className="absolute -right-10  top-20 hidden h-5 w-5 cursor-pointer text-zinc-400 transition-all duration-100 ease-in-out hover:scale-125 hover:fill-zinc-600 hover:text-zinc-600 dark:text-zinc-600 dark:hover:fill-zinc-400 dark:hover:text-zinc-400 xl:block" />
+        <Icons.share className="absolute -right-10  top-[116px] hidden h-5 w-5 cursor-pointer text-zinc-400 transition-all duration-100 ease-in-out hover:scale-125 hover:fill-zinc-600 hover:text-zinc-600 dark:text-zinc-600 dark:hover:fill-zinc-400 dark:hover:text-zinc-400 xl:block" />
       </div>
       {/* text content */}
       <div className="mx-auto mt-1 text-lg leading-10 text-muted-foreground sm:px-4">

@@ -2,10 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
-import demo4 from "@/public/images/demo4.jpg";
 import { Button } from "@/components/ui/button";
 import Card from "@/components/card";
 import Listview from "@/components/listview";
+import { articles, events } from "@/lib/data";
 
 import { signOut, useSession } from "next-auth/react";
 
@@ -37,14 +37,70 @@ export default function Page() {
           Sign out
         </Button>
       </div>
-      <h4 className="my-2 mb-4 font-medium">My articles and events:</h4>
+      {/* user's articles */}
+      <h4 className="my-2 mb-4 font-medium">My articles:</h4>
       <Listview>
-        {Array(7)
-          .fill("")
-          .map((_, i) => (
-            <Card key={i} />
-          ))}
+        <Card
+          title={articles[0].title}
+          description={articles[0].description}
+          date={articles[0].date}
+          coverImage={articles[0].coverImage}
+          author={session?.user?.name as string}
+          authorImage={session?.user?.image as string}
+          slug={articles[0].slug}
+        />
+        <Card
+          title={articles[7].title}
+          description={articles[7].description}
+          date={articles[7].date}
+          coverImage={articles[7].coverImage}
+          author={session?.user?.name as string}
+          authorImage={session?.user?.image as string}
+          slug={articles[7].slug}
+        />
+        <Card
+          title={articles[3].title}
+          description={articles[3].description}
+          date={articles[3].date}
+          coverImage={articles[3].coverImage}
+          author={session?.user?.name as string}
+          authorImage={session?.user?.image as string}
+          slug={articles[3].slug}
+        />
       </Listview>
+      {/* user's articles end */}
+      {/* user's events */}
+      <h4 className="my-2 mb-4 mt-24 font-medium">My events:</h4>
+      <Listview>
+        <Card
+          title={events[7].title}
+          description={events[7].description}
+          date={events[7].date}
+          coverImage={events[7].coverImage}
+          author={session?.user?.name as string}
+          authorImage={session?.user?.image as string}
+          slug={events[7].slug}
+        />
+        <Card
+          title={events[3].title}
+          description={events[3].description}
+          date={events[3].date}
+          coverImage={events[3].coverImage}
+          author={session?.user?.name as string}
+          authorImage={session?.user?.image as string}
+          slug={events[3].slug}
+        />
+        <Card
+          title={events[0].title}
+          description={events[0].description}
+          date={events[0].date}
+          coverImage={events[0].coverImage}
+          author={session?.user?.name as string}
+          authorImage={session?.user?.image as string}
+          slug={events[0].slug}
+        />
+      </Listview>
+      {/* user's events end */}
     </section>
   );
 }

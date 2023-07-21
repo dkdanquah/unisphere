@@ -11,6 +11,7 @@ import {
 import { cn } from "@/lib/utils";
 import { people } from "./data";
 import { getCaretCoordinates, getCurrentWord, replaceWord } from "./utils";
+import { usePathname } from "next/navigation";
 
 interface Props {
   textValue: string;
@@ -18,6 +19,7 @@ interface Props {
 }
 
 export function Write({ textValue, setTextValue }: Props) {
+  const pathname = usePathname();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -144,6 +146,11 @@ export function Write({ textValue, setTextValue }: Props) {
         className="h-auto min-h-[30vh] resize-none"
         value={textValue}
         onChange={onTextValueChange}
+        placeholder={
+          pathname.includes("article")
+            ? "Your awesome article for everyone"
+            : "Let people know all about your event"
+        }
         rows={5}
       />
       <div className="mt-3 flex flex-col md:mt-1 md:flex-row md:items-center">

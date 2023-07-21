@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -20,6 +21,7 @@ import { toast } from "@/components/ui/use-toast";
 import Image from "next/image";
 import { CalendarDateRangePicker } from "@/components/range-picker";
 import { MDX } from "@/components/markdown/mdx";
+import { Icons } from "@/components/icons";
 
 const FormSchema = z.object({
   title: z.string().min(7, {
@@ -43,6 +45,8 @@ const FormSchema = z.object({
 });
 
 export default function Page() {
+  const router = useRouter();
+
   const [file, setFile] = useState<string>("");
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -50,13 +54,18 @@ export default function Page() {
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     toast({
-      title: "You submitted the following values:",
+      // title: "You submitted the following values:",
       description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
+        <div className="flex">
+          <Icons.checkCircle className="mr-2 h-5 w-5" />
+          <span>Your event has been created successfully</span>
+        </div>
       ),
     });
+
+    setTimeout(() => {
+      router.push("/events");
+    }, 2000);
   }
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -199,7 +208,7 @@ export default function Page() {
                 />
 
                 <div className="">
-                  <FormLabel>Content</FormLabel>
+                  <FormLabel>Event brochure</FormLabel>
                   <div className="mt-2">
                     <MDX />
                   </div>
